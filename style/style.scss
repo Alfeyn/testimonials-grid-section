@@ -1,0 +1,151 @@
+@import 'color';
+@import 'mixins';
+
+body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+
+
+    .main-container {
+        width: 100vw;
+        margin: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include desktop {
+            width: 85vw;
+            flex-direction: row;
+            overflow-x: none;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .second-section {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                @include desktop {
+                    flex-direction: row;
+                }
+            }
+
+            .testimonial-card {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+                margin: 0 30px;
+                border-radius: 12px;
+
+                @include desktop {
+                    margin: 0;
+                }
+
+                .profile {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        width: 40px;
+                        border-radius: 50%;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        color: $White;
+                        opacity: 0.5;
+
+                        &.full-name {
+                            opacity: 1;
+
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .detail {
+                    article {
+                        color: $White;
+                        opacity: 0.5;
+
+                        &.bold {
+                            margin-bottom: 20px;
+                            font-size: 1.2rem;
+                            opacity: 1;
+                            font-weight: 600;
+                        }
+                    }
+
+                }
+
+                &.violet {
+                    background-image: url('./../images/bg-pattern-quotation.svg');
+                    background-repeat: no-repeat;
+                    background-position: top right 30px;
+                    background-color: $Moderate-violet;
+                }
+
+                &.grayish-blue {
+                    background-color: $Very-dark-grayish-blue;
+                }
+
+
+
+                &.blackish-blue {
+                    background-color: $Very-dark-blackish-blue;
+                }
+
+                &.white {
+                    background-color: $White;
+                    box-shadow: 0 8px 15px #00000033;
+
+                    .profile {
+                        p {
+                            color: $Very-dark-grayish-blue;
+
+                        }
+                    }
+
+                    .detail {
+                        article {
+                            color: $Very-dark-grayish-blue;
+                        }
+
+                    }
+                }
+            }
+
+            @include desktop {
+                &.one {
+                width: 75%;
+                }
+
+                &.two {
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 20px;
+
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+
+}
